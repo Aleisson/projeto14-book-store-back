@@ -14,6 +14,8 @@ app.use(cors());
 app.use(json());
 
 
+app.get("/",(req,res)=>{<h1>Hello World!!!</h1>})
+
 console.log(process.env.MONGO_URI)
 const mongoClient = new MongoClient(process.env.MONGO_URI);
 let database;
