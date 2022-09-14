@@ -4,7 +4,7 @@ import {signUpMiddleWares } from '../middlewares/auth.MiddleWares.js';
 const router = express.Router();
 
 router.post('/signUp', signUpMiddleWares,signUp);
-router.posr('/signIN',signIn);
+router.post('/signIN',signIn);
 
 export default router;
 
