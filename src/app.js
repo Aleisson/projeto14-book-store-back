@@ -2,8 +2,8 @@ import express from 'express';
 import {json} from 'express';
 import cors from 'cors';
 import dotnev from 'dotenv';
-import homeRoute from './routes/homeRoute.js'
-import authRouter from './routes/authRouter.js'
+import homeRoute from './routes/home.Route.js'
+import authRouter from './routes/auth.Router.js'
 
 dotnev.config();
 
