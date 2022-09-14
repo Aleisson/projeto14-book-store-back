@@ -10,6 +10,11 @@ async function signUp(req, res){
 
     try{
 
+        const checkUser = await database.collection('users').findOne({email});
+        if(checkUser){
+            return res.send(STATUS_CODE.CONFLICT);
+        }
+
         database.collection('users').insertOne({name, email, password: passwordHash});
         return res.send(STATUS_CODE.CREATED);
     }catch(e){
