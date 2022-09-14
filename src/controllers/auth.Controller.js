@@ -29,12 +29,12 @@ async function signIn(req, res) {
 
         await database.collection('sessions').insertOne({
             userId: user._id, 
-            username: user.name,
+            name: user.name,
             token,
             lastStatus: Date.now()
         })
 
-        return res.status(STATUS_CODE.CREATED).send({username: user.name, token});
+        return res.status(STATUS_CODE.CREATED).send({name: user.name, token});
 
     } catch (error) {
         console.error(error);
