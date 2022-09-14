@@ -1,10 +1,23 @@
-import STATUS_CODE from '../enums/statusCode.js';
+import {STATUS_CODE} from '../enums/statusCode.js';
+import bcrypt from 'bcrypt';
+import database from '../database/database.js'
 
 async function signUp(req, res){
 
+    const {name, email, password} = req.body;
 
+    const passwordHash = bcrypt.hashSync(password,10);
 
-    res.send("<h1>Sign up<h1>");
+    try{
+
+        database.collection('users').insertOne({name, email, password: passwordHash});
+        return res.send(STATUS_CODE.CREATED);
+    }catch(e){
+        console.error(error);
+        return res.send(STATUS_CODE.SERVER_ERROR);
+    }
+
+    
 }
 
 export {signUp}
