@@ -21,4 +21,10 @@ async function signUp(req, res){
     
 }
 
-export {signUp}
+async function signIn(req, res){
+
+    res.send('<h1>SignIN</h1>')
+
+}
+
+export {signUp, signIn}
