@@ -2,11 +2,11 @@
   "name": "projeto14-book-store-back",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "Driven - Projeto #14 - book store - back Este projeto foi solicitado dia 05/09/2022 (18º semana da turma 07 - Módulo 3: Back-end) na aula de Desenvolvimento web ministrada Prof. Lele;",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/app.js",
-		"dev": "npx nodemon ./src/app.js",
+    "dev": "npx nodemon ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -24,5 +24,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aleisson/projeto14-bookstore-back.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aleisson/projeto14-bookstore-back/issues"
+  },
+  "homepage": "https://github.com/Aleisson/projeto14-bookstore-back#readme"
 }
