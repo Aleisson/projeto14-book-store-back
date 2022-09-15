@@ -6,7 +6,6 @@ import { books } from './books.js'
 async function insertProducts() {
 
     try {
-
         const validProducts = await database.collection(DATABASE_COLLECTIONS.PRODUCTS).find({}).toArray();
         //console.log(validProducts)
         if(validProducts.length){
@@ -15,8 +14,8 @@ async function insertProducts() {
 
         await database.collection(DATABASE_COLLECTIONS.PRODUCTS).insertMany(books);
 
-    } catch (e) {
-        console.error(e);
+    } catch (error) {
+        console.error(error);
     }
 
 
