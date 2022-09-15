@@ -2,7 +2,7 @@ import { STATUS_CODE } from '../enums/statusCode.enum.js';
 import { DATABASE_COLLECTIONS } from '../enums/databaseCollections.enum.js';
 import { signUpSchema, signInSchema } from '../schemas/auth.Schema.js';
 import database from '../database/database.js';
-import bcrypt from 'bcrypt';
+import bcrypt, { compareSync } from 'bcrypt';
 
 
 async function signUpMiddleWares(req, res, next) {
@@ -46,10 +46,13 @@ async function signInMiddleWares(req, res, next) {
 
     try {
         const user = await database.collection(DATABASE_COLLECTIONS.USERS).findOne({ email });
-
+        
+        if(!user){
+            return res.sendStatus(STATUS_CODE.UNAUTHORIZED);
+        }
         const passwordValid = bcrypt.compareSync(password, user.password);
-
-        if (!user || !passwordValid) {
+     
+        if (!passwordValid) {
             return res.sendStatus(STATUS_CODE.UNAUTHORIZED);
         }
 
