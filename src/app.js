@@ -5,7 +5,7 @@ import dotnev from 'dotenv';
 import homeRoute from './routes/home.Route.js'
 import authRouter from './routes/auth.Route.js'
 import products from './routes/products.Route.js'
-
+import {insertProducts} from './scripts/insertProducts.js'
 dotnev.config();
 
 
@@ -16,6 +16,8 @@ app.use(json());
 
 app.use(homeRoute);
 app.use(authRouter);
+
+insertProducts();
 app.use(products);
 
 app.listen(process.env.PORT, () =>{
