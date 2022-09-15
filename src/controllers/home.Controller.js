@@ -1,4 +1,4 @@
-import {STATUS_CODE} from '../enums/statusCode.js';
+import {STATUS_CODE} from '../enums/statusCode.enum.js';
 
 function getHome(req, res){
 

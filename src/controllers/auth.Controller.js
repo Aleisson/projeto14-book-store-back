@@ -1,4 +1,5 @@
-import { STATUS_CODE } from '../enums/statusCode.js';
+import { STATUS_CODE } from '../enums/statusCode.enum.js';
+import {DATABASE_COLLECTIONS} from '../enums/databaseCollections.enum.js'
 import database from '../database/database.js'
 import bcrypt from 'bcrypt';
 import {v4 as uuid} from 'uuid';
@@ -10,7 +11,7 @@ async function signUp(req, res) {
     const passwordHash = bcrypt.hashSync(password, 10);
 
     try {
-        database.collection('users').insertOne({ name, email, password: passwordHash });
+        database.collection(DATABASE_COLLECTIONS.USERS).insertOne({ name, email, password: passwordHash });
         return res.sendStatus(STATUS_CODE.CREATED);
     } catch (e) {
         console.error(error);
@@ -27,7 +28,7 @@ async function signIn(req, res) {
     try {
         const token = uuid();
 
-        await database.collection('sessions').insertOne({
+        await database.collection(DATABASE_COLLECTIONS.SESSIONS).insertOne({
             userId: user._id, 
             name: user.name,
             token,
