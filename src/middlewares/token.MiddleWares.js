@@ -15,13 +15,13 @@ async function tokenMidlewares(req, res, next) {
         const session = await database.collection(DATABASE_COLLECTIONS.SESSIONS).findOne({ token });
 
         if (!session) {
-            return res.send(STATUS_CODE.UNAUTHORIZED);
+            return res.sendStatus(STATUS_CODE.UNAUTHORIZED);
         }
 
         const user = await database.collection(DATABASE_COLLECTIONS.USERS).findOne({ _id: session.userId });
 
         if (!user) {
-            return res.send(STATUS_CODE.UNAUTHORIZED);
+            return res.sendStatus(STATUS_CODE.UNAUTHORIZED);
         }
 
         res.locals.user = user;
