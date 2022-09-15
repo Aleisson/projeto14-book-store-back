@@ -10,7 +10,7 @@ const books = [
     {name: 'Chainsaw Man, Vol. 1: Dog And Chainsaw ', author:'Tatsuki Fujimoto', imagem:'https://m.media-amazon.com/images/I/51sdy2UtO7L.jpg', valor:'15.00'},
     {name: 'Fire Punch vol. 01', author:'Tatsuki Fujimoto', imagem:'https://m.media-amazon.com/images/I/51xIXADyiiL.jpg', valor:'18.00'},
     {name: 'Blame! - Vol. 1', author:'Tsutomu Nihei', imagem:'https://m.media-amazon.com/images/P/B077VTS3TB.01._SCLZZZZZZZ_SX500_.jpg', valor:'15.00'},
-    {name: 'Berserk Deluxe Volume ', author:'Kentaro Miura', imagem:'https://images-na.ssl-images-amazon.com/images/I/51lYgD48BPL._SX348_BO1,204,203,200_.jpg', valor:'135.00'},
+    {name: 'Berserk Deluxe Volume 1', author:'Kentaro Miura', imagem:'https://images-na.ssl-images-amazon.com/images/I/51lYgD48BPL._SX348_BO1,204,203,200_.jpg', valor:'135.00'},
 ]
 
 export {books};
