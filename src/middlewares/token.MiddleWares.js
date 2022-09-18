@@ -5,9 +5,9 @@ import database from '../database/database.js';
 async function tokenMidlewares(req, res, next) {
 
     const token = req.headers.authorization?.replace('Bearer ', '')
-
+ 
     if (!token) {
-        return res.sendStatus(STATUS_CODE.BAD_REQUEST);
+        return res.sendStatus(STATUS_CODE.UNAUTHORIZED);
     }
 
     try {

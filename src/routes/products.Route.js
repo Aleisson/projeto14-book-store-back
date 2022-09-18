@@ -7,4 +7,5 @@ const router = express.Router();
 
 router.get('/products', tokenMidlewares,productsGet);
 
+
 export default router;
