@@ -1,11 +1,11 @@
 import express from 'express';
-import {json} from 'express';
+import { json } from 'express';
 import cors from 'cors';
 import dotnev from 'dotenv';
 import homeRoute from './routes/home.Route.js'
 import authRouter from './routes/auth.Route.js'
 import products from './routes/products.Route.js'
-import {insertProducts} from './scripts/insertProducts.js'
+import { insertProducts } from './scripts/insertProducts.js'
 dotnev.config();
 
 
@@ -20,6 +20,6 @@ app.use(authRouter);
 insertProducts();
 app.use(products);
 
-app.listen(process.env.PORT, () =>{
+app.listen(process.env.PORT, () => {
     console.log("Server running on port " + process.env.PORT);
 });

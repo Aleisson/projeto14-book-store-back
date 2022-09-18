@@ -46,7 +46,7 @@ async function signInMiddleWares(req, res, next) {
 
     try {
         const user = await database.collection(DATABASE_COLLECTIONS.USERS).findOne({ email });
-        
+        //console.log(user);
         if(!user){
             return res.sendStatus(STATUS_CODE.UNAUTHORIZED);
         }
