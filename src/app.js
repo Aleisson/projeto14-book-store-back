@@ -7,7 +7,7 @@ import authRouter from './routes/auth.Route.js'
 import products from './routes/products.Route.js'
 import { insertProducts } from './scripts/insertProducts.js'
 dotnev.config();
-
+import cart from './routes/cart.Route.js'
 
 const app = express();
 
@@ -19,6 +19,7 @@ app.use(authRouter);
 
 insertProducts();
 app.use(products);
+app.use(cart);
 
 app.listen(process.env.PORT, () => {
     console.log("Server running on port " + process.env.PORT);
