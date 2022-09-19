@@ -12,7 +12,7 @@ async function postCheckOut(req, res) {
             ...checkOut,
             userId: user._id
         });
-        database.collection(DATABASE_COLLECTIONS.PRODUCTSCART).deleteMany({userId:ObjectId(user.id)})
+        const teste = database.collection(DATABASE_COLLECTIONS.PRODUCTSCART).deleteMany({userId:user._id})
         
 
         res.sendStatus(STATUS_CODE.OK);

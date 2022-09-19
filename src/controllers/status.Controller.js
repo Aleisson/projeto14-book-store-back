@@ -15,7 +15,7 @@ async function postStatus(req, res) {
             res.sendStatus(STATUS_CODE.NOT_FOUND);
             return;
         }
-
+        
         await database.collection(DATABASE_COLLECTIONS.SESSIONS).updateOne({ token }, { $set: { lastStatus: Date.now() } })
 
     } catch (error) {
