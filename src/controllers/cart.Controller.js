@@ -14,7 +14,7 @@ async function cartPost(req, res) {
         userId: user._id
       });
 
-    res.sendStatus(STATUS_CODE.OK);
+    res.sendStatus(STATUS_CODE.CREATED);
   } catch (error) {
     console.error(error);
     return res.sendStatus(STATUS_CODE.SERVER_ERROR);

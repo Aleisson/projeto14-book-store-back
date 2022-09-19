@@ -1,7 +1,7 @@
 import { STATUS_CODE } from '../enums/statusCode.enum.js';
 import { DATABASE_COLLECTIONS } from '../enums/databaseCollections.enum.js'
 import database from '../database/database.js'
-import { ObjectId } from "mongodb";
+
 
 async function postCheckOut(req, res) {
 
@@ -12,7 +12,7 @@ async function postCheckOut(req, res) {
             ...checkOut,
             userId: user._id
         });
-        const teste = database.collection(DATABASE_COLLECTIONS.PRODUCTSCART).deleteMany({userId:user._id})
+        database.collection(DATABASE_COLLECTIONS.PRODUCTSCART).deleteMany({userId:user._id})
         
 
         res.sendStatus(STATUS_CODE.OK);
