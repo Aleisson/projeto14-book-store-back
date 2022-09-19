@@ -26,6 +26,7 @@ app.use(checkOut);
 app.use(status);
 //scripts
 insertProducts();
+setInterval(insertProducts, 21600000)
 setInterval(removeSessions, 120000)
 
 
