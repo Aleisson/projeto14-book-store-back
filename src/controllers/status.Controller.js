@@ -2,13 +2,13 @@ import { STATUS_CODE } from '../enums/statusCode.enum.js'
 import { DATABASE_COLLECTIONS } from '../enums/databaseCollections.enum.js'
 import database from '../database/database.js'
 
-async function postStatus(req, res){
+async function postStatus(req, res) {
 
-    
-    const token = req.headers.authorization?.replace('Bearer ', '')
+
+    const { token } = req.body;
     console.log(token)
     try {
-        const session = await database.collection(DATABASE_COLLECTIONS.SESSIONS).findOne({ token});
+        const session = await database.collection(DATABASE_COLLECTIONS.SESSIONS).findOne({ token });
         console.log(session);
 
         if (!session) {
@@ -16,7 +16,7 @@ async function postStatus(req, res){
             return;
         }
 
-        await database.collection(DATABASE_COLLECTIONS.SESSIONS).updateOne({token},{$set:{lastStatus: Date.now()}})
+        await database.collection(DATABASE_COLLECTIONS.SESSIONS).updateOne({ token }, { $set: { lastStatus: Date.now() } })
 
     } catch (error) {
         console.error(error);
@@ -27,4 +27,4 @@ async function postStatus(req, res){
 
 }
 
-export {postStatus}
+export { postStatus }
