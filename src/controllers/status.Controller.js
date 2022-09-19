@@ -6,10 +6,10 @@ async function postStatus(req, res) {
 
 
     const { token } = req.body;
-    console.log(token)
+    //console.log(token)
     try {
         const session = await database.collection(DATABASE_COLLECTIONS.SESSIONS).findOne({ token });
-        console.log(session);
+        //console.log(session);
 
         if (!session) {
             res.sendStatus(STATUS_CODE.NOT_FOUND);
