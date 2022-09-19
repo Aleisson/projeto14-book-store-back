@@ -6,6 +6,7 @@ import homeRoute from './routes/home.Route.js'
 import authRouter from './routes/auth.Route.js'
 import products from './routes/products.Route.js'
 import checkOut from './routes/checkOut.Route.js'
+import status from './routes/status.Route.js'
 import { insertProducts } from './scripts/insertProducts.js'
 import {removeSessions} from './scripts/removeSessions.js'
 
@@ -22,9 +23,10 @@ app.use(authRouter);
 app.use(products);
 app.use(cart);
 app.use(checkOut);
+app.use(status);
 //scripts
 insertProducts();
-setInterval(removeSessions, 120000)
+//setInterval(removeSessions, 120000)
 
 
 app.listen(process.env.PORT, () => {
