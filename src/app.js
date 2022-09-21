@@ -27,7 +27,7 @@ app.use(status);
 //scripts
 insertProducts();
 setInterval(insertProducts, 21600000)
-//setInterval(removeSessions, 120000)
+setInterval(removeSessions, 120000)
 
 
 app.listen(process.env.PORT, () => {
